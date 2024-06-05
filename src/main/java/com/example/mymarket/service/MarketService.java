@@ -35,8 +35,26 @@ public class MarketService {
         }
         return true;
     }
-    public ItemDtoList getItemsByPage(int pageNum) {
-        Pageable pageable = PageRequest.of(pageNum, 6);
+    public ItemDtoList getItemsByPage(int pageNum, String sortinf) {
+        String[] sortarr=sortinf.split("_");
+        String itemType=sortarr[0];
+        String sortType=sortarr[1];
+        Sort sort=null;
+        if(itemType.equals("Price")){
+            if(sortType.equals("Ascending")){
+                sort=Sort.by("price").ascending();
+            }else if(sortType.equals("Descending")){
+                sort=Sort.by("price").descending();
+            }
+        }
+        if(itemType.equals("Date")){
+            if(sortType.equals("Ascending")){
+                sort=Sort.by("submittionTime").ascending();
+            }else if(sortType.equals("Descending")){
+                sort=Sort.by("submittionTime").descending();
+            }
+        }
+        Pageable pageable = PageRequest.of(pageNum, 6,sort);
         val item = repo.findAll(pageable).stream().toList();
         return converter.convert(item);
     }

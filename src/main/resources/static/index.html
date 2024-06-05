@@ -9,19 +9,21 @@
 </head>
 <body style="background-color:  #f1f1f1">
 <fieldset class="toptitle">
-    <div class="horizontallayout">
+    <div class="horizontallayout2">
         <label class="title">eMarketplace</label>
-        <button id="newbutton" class="newbutton" onclick="addnewitem()">New</button>
+        <button id="newbutton" class="newbutton">New</button>
+        <label id="username" class="username"></label>
+        <button id="logout" class="newbutton" onclick="deleteusername()">logout</button>
     </div>
 </fieldset>
 <div class="verticallayout">
     <div class="horizontallayout">
     <label style="margin-bottom: 25px" id="total items">none</label>
         <select id="sortOptions" name="sortOptions">
-            <option value="date_asc">Date Ascending</option>
-            <option value="date_desc" selected>Date Descending</option>
-            <option value="price_asc">Price Ascending</option>
-            <option value="price_desc">Price Descending</option>
+            <option value="Date_Ascending">Date Ascending</option>
+            <option value="Date_Descending" selected>Date Descending</option>
+            <option value="Price_Ascending">Price Ascending</option>
+            <option value="Price_Descending">Price Descending</option>
         </select>
     </div>
     <div class="grid-container">

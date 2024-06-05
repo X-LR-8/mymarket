@@ -23,35 +23,36 @@
     </div>
     <div id="signupForm" class="verticallayout hidden">
         <div class="horizontallayout" style="margin-bottom: 10px;">
-            <input type="text" id="signupUsername" placeholder="Username" class="inputs"/>
+            <input type="text" id="signupUsername" required placeholder="Username" class="inputs"/>
         </div>
         <div class="horizontallayout" style="margin-bottom: 10px;">
-            <input type="email" id="signupEmail" placeholder="Email" class="inputs" />
+            <input type="text" id="signupEmail" required placeholder="Email" class="inputs" />
         </div>
         <div class="horizontallayout" style="margin-bottom: 10px;">
-            <input type="password" id="signupPassword" placeholder="Password" class="inputs" />
+            <input type="password" id="signupPassword" required placeholder="Password" class="inputs" />
         </div>
         <div class="horizontallayout" style="margin-bottom: 10px;">
-            <input type="password" id="confirmPassword" placeholder="Confirm Password" class="inputs" />
+            <input type="password" id="confirmPassword" required placeholder="Confirm Password" class="inputs" />
         </div>
         <div class="horizontallayout" style="margin-bottom: 10px;">
-            <input type="date" id="signupBirthday" placeholder="Birthday" class="inputs" />
+            <input type="date" id="signupBirthday" required placeholder="Birthday" class="inputs" />
         </div>
         <div class="horizontallayout">
-            <button class="button">Submit</button>
+            <button class="button" onclick="submitSignupForm()">Submit</button>
         </div>
-        <div id="signupError" class="error hidden">Passwords do not match</div>
+        <div id="signupError" style="text-align: center" class="error hidden horizontallayout">Passwords do not match</div>
     </div>
     <div id="loginForm" class="verticallayout hidden">
         <div class="horizontallayout" style="margin-bottom: 10px;">
-            <input type="email" id="loginEmail" placeholder="Email" class="inputs" />
+            <input type="text" id="loginEmail" required placeholder="Email" class="inputs" />
         </div>
         <div class="horizontallayout" style="margin-bottom: 10px;">
-            <input type="password" id="loginPassword" placeholder="Password" class="inputs" />
+            <input type="password" id="loginPassword" required placeholder="Password" class="inputs" />
         </div>
         <div class="horizontallayout">
-            <button class="button">Submit</button>
+            <button class="button" onclick="submitLoginForm()">Submit</button>
         </div>
+        <div id="loginError" style="text-align: center" class="error hidden horizontallayout">invalid input</div>
     </div>
 </div>
 </body>

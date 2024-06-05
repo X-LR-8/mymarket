@@ -20,12 +20,12 @@ public class MarketController {
         this.marketService = marketService;
     }
 
-    @GetMapping("/{page}")
+    @GetMapping("/{page}/{sortinf}")
     @ResponseBody
-    public ResponseEntity<?> getpageItems(@PathVariable("page") Integer oldpage){
+    public ResponseEntity<?> getpageItems(@PathVariable("page") Integer oldpage,@PathVariable("sortinf") String sortinf){
         try {
             int page=oldpage-1;
-            val list=marketService.getItemsByPage(page);
+            val list=marketService.getItemsByPage(page,sortinf);
             return ResponseEntity.status(HttpStatus.OK).body(list);
         } catch (EntityNotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());

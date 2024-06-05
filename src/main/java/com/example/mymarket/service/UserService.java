@@ -6,6 +6,8 @@ import com.example.mymarket.dto.UserDtoCollection;
 import com.example.mymarket.model.User;
 import com.example.mymarket.repository.UserRepository;
 import com.example.mymarket.util.DtoConverter;
+import jakarta.mail.internet.AddressException;
+import jakarta.mail.internet.InternetAddress;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.val;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,5 +45,13 @@ public class UserService {
             answer=true;
         }
         return answer;
+    }
+    public boolean checkEmail(String email){
+        try {
+            new InternetAddress(email).validate();
+            return true;
+        } catch (AddressException ex) {
+            return false;
+        }
     }
 }

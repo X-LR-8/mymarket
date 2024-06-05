@@ -32,7 +32,19 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }
-    @PutMapping
+    @PutMapping("/email")
+    @ResponseBody
+    public ResponseEntity<?> checkEmail(@RequestParam("email") String email) {
+        try {
+            val body=userService.checkEmail(email);
+            return ResponseEntity.status(HttpStatus.OK).body(body);
+        } catch (EntityNotFoundException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
+    }
+    @PutMapping("/checkuser")
     @ResponseBody
     public ResponseEntity<?> checkUser(@RequestParam("email") String email,@RequestParam("password") String password) {
         try {

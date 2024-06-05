@@ -14,6 +14,12 @@
     text-align: start;
     display: block;
 }
+.username{
+    font-weight: bold;
+    color: white;
+    font-size: 40px;
+    margin:0px 10px 0 10px;
+}
 .newbutton{
     width: 140px;
     border-radius: 10px;
@@ -33,6 +39,15 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+}
+.horizontallayout2{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.title {
+    margin-right: auto;
 }
 .pagehorizontallayout{
     width: 100%;
@@ -108,4 +123,7 @@
     height: 100%;
     object-fit: contain;
     object-position: center;
+}
+.hidlabel {
+    display: none;
 }
