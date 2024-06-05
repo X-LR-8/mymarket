@@ -23,12 +23,14 @@ async function nextpage() {
     var url=`http://localhost:8080/market/${page}`;
     var response = await fetch(url, {method: "GET"});
     const body = await response.json();
-    console.log(body);
+    console.log(body.quantity);
     if (body.quantity!=0) {
         console.log("modis");
         document.getElementById('pagenumber').innerText = page;
         document.getElementById('backbutton').classList.remove('hidebutt');
         fillGridWithItems(body.itemDtoList);
+    }else{
+        page--;
     }
     console.log(page);
 }
@@ -42,6 +44,7 @@ async function backpage() {
     var url=`http://localhost:8080/market/${page}`;
     var response = await fetch(url, {method: "GET"});
     const body = await response.json();
+    console.log(body)
     fillGridWithItems(body.itemDtoList);
     console.log(page);
 }

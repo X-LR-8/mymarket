@@ -1,0 +1,78 @@
+.toptitle{
+    background-color: #0000ff;
+    border-color: #0000ff;
+    border-width: 2px;
+    border-style: solid;
+}
+.title{
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    color: white;
+    font-size: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: start;
+    display: block;
+}
+.horizontallayout{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.verticallayout{
+    margin-top: 25px;
+    display:flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+}
+
+.mainverticallayout{
+    background: #ffffff;
+    border-radius: 5px;
+    border-color: #919191;
+    border-style: solid;
+    border-width: 1px;
+    padding:30px;
+    display:flex;
+    box-shadow: 0 0 30px rgb(0, 196, 255);
+    margin-top: 100px;
+    margin-right: 700px;
+    margin-left: 700px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.horizontallayout{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.button {
+    width: 150px;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    border-radius: 8px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: rgb(0, 187, 255);
+}
+.inputs{
+    padding: 10px 15px 10px 15px;
+    border-radius: 15px;
+    border-color: #000000;
+    border-style: solid;
+    border-width: 2px;
+}
+.hidden {
+    display: none;
+}

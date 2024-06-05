@@ -2,7 +2,10 @@ package com.example.mymarket.util;
 
 import com.example.mymarket.dto.ItemDto;
 import com.example.mymarket.dto.ItemDtoList;
+import com.example.mymarket.dto.UserDto;
+import com.example.mymarket.dto.UserDtoCollection;
 import com.example.mymarket.model.Item;
+import com.example.mymarket.model.User;
 import jakarta.persistence.Column;
 import org.springframework.stereotype.Component;
 
@@ -32,6 +35,27 @@ public class DtoConverter {
         return ItemDtoList.builder()
                 .itemDtoList(itemList.stream().map(this::convert).toList())
                 .quantity(itemList.size())
+                .build();
+    }
+    public UserDto userconvert(User user){
+        return UserDto.builder()
+                .username(user.getUsername())
+                .email(user.getEmail())
+                .password(user.getPassword())
+                .instantbirthday(user.getInstantbirthday())
+                .build();
+    }
+    public User userconvert(UserDto userDto){
+        return User.builder()
+                .username(userDto.getUsername())
+                .email(userDto.getEmail())
+                .password(userDto.getPassword())
+                .instantbirthday(userDto.getInstantbirthday())
+                .build();
+    }
+    public UserDtoCollection userconvert(List<User> users) {
+        return UserDtoCollection.builder()
+                .userDtoList(users.stream().map(this::userconvert).toList())
                 .build();
     }
 }
