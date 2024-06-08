@@ -1,12 +1,8 @@
 package com.example.mymarket.util;
 
-import com.example.mymarket.dto.ItemDto;
-import com.example.mymarket.dto.ItemDtoList;
-import com.example.mymarket.dto.UserDto;
-import com.example.mymarket.dto.UserDtoCollection;
+import com.example.mymarket.dto.*;
 import com.example.mymarket.model.Item;
 import com.example.mymarket.model.User;
-import jakarta.persistence.Column;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -15,6 +11,7 @@ import java.util.List;
 public class DtoConverter {
     public ItemDto convert(Item item){
         return ItemDto.builder()
+                .username(item.getUsername())
                 .name(item.getName())
                 .price(item.getPrice())
                 .description(item.getDescription())
@@ -24,6 +21,7 @@ public class DtoConverter {
     }
     public Item convert(ItemDto itemDto){
         return Item.builder()
+                .username(itemDto.getUsername())
                 .name(itemDto.getName())
                 .price(itemDto.getPrice())
                 .description(itemDto.getDescription())

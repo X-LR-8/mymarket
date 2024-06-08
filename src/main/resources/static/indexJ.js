@@ -23,7 +23,6 @@ var page = 1;
 
 async function loadContent() {
     var quantity = document.getElementById('total items');
-    document.getElementById('backbutton').classList.add('hidebutt');
     const option = await handleSortChange();
     var url = `/market/${page}/${option}`;
     console.log(option);
@@ -52,6 +51,7 @@ window.onload = async function () {
         label.classList.add('hidlabel');
         button.textContent = 'Login';
         button.addEventListener('click', function() {
+            window.close();
             window.open('signup.html');
 
         });
@@ -61,9 +61,11 @@ window.onload = async function () {
         label.innerText=labeltext;
         button.textContent = 'new';
         button.addEventListener('click', function() {
+            window.close();
             window.open('new-item.html');
         });
     }
+    document.getElementById('backbutton').classList.add('hidebutt');
     await loadContent();
     document.getElementById('sortOptions').addEventListener('change', async function () {
         await loadContent();

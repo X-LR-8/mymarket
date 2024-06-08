@@ -13,7 +13,6 @@ async function submit(){
     }else{
         if(isNumeric(price)){
             var response =await fetch("http://localhost:8080/market/check"+`?name=${title}`,{method: 'GET'});
-
             var body=await response.json();
             console.log(body);
             if (body) {
@@ -24,21 +23,23 @@ async function submit(){
                     warning.value="";
                 }, 3000);
             } else {
+                const username=localStorage.getItem('username');
                 var itemDto = {
+                    username: username,
                     name: title,
                     price: price,
                     description: description,
                     submittionTime: await gettime()
                 };
 
-                var response= await fetch('http://localhost:8080/market', {
+                var response3= await fetch('http://localhost:8080/market', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(itemDto)
                 })
-                //^^this is for dto clas without photo
+                //                     ＼（〇_ｏ）／              this is for dto clas without photo
                 var formData = new FormData();
                 formData.append('photo', photo);
                 formData.append('name', title);
@@ -47,8 +48,10 @@ async function submit(){
                     method: "POST",
                     body: formData
                 });
-                //^^this is for photo
+                //                     ㄟ( ▔, ▔ )ㄏ              this is for photo
             }
+            window.close();
+            window.open('index.html');
         }else{
             var warning=document.getElementById('warning');
             document.getElementById('price').value="";

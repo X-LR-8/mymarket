@@ -85,7 +85,7 @@
 .itemverticallayout img {
     width: 455px;
     height: 200px;
-    object-fit: cover;
+    /*object-fit: cover;*/
 }
 .itemverticallayout label {
     white-space: nowrap;

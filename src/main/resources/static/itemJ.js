@@ -7,6 +7,7 @@ window.onload=async function(){
     var price=document.getElementById("price");
     var time=document.getElementById("time");
     var desc=document.getElementById("description");
+    var user=document.getElementById("user");
     var src=body.photo+".jpg"
     console.log(src);
     img.src=src;
@@ -14,6 +15,7 @@ window.onload=async function(){
     price.innerText=body.price+"$";
     time.innerText=body.submittionTime;
     desc.innerText=body.description;
+    user.innerText="item by: "+body.username;
 }
 window.onclose=async function(){
     localStorage.removeItem('labeltext');

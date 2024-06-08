@@ -1,5 +1,6 @@
 package com.example.mymarket.service;
 import com.example.mymarket.dto.ItemDtoList;
+import com.example.mymarket.model.Item;
 import com.example.mymarket.repository.ItemRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.val;
